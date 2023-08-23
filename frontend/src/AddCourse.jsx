@@ -6,6 +6,7 @@ import { useState } from "react";
 function AddCourse() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [image, setImage] = useState("");
     return <div style={{ display: "flex", justifyContent: "center" }}>
         <Card variant={'outlined'} style={{ width: 400, padding: 20 }}>
             <TextField
@@ -26,12 +27,21 @@ function AddCourse() {
                 variant='outlined'
             />
             <br /><br />
+            <TextField
+                onChange={(e) => {
+                    setImage(e.target.value);
+                }}
+                fullWidth={true}
+                label="Image Link"
+                variant='outlined'
+            />
+
             <Button
                 size={"large"}
                 variant='contained'
                 onClick={() => {
                     function callback2(data) {
-                        localStorage.setItem("token", data.token);
+                        alert("Course added!");
                     }
                     function callback1(res) {
                         res.json().then(callback2);
@@ -41,7 +51,7 @@ function AddCourse() {
                         body: JSON.stringify({
                             title: title,
                             description: description,
-                            imageLink: "",
+                            imageLink: image,
                             published: true
                         }),
                         headers: {
