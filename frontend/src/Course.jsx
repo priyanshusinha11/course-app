@@ -34,7 +34,8 @@ function Course() {
         </div>
     }
     return <div>
-
+        <CourseCard course={course} />
+        <UpdateCard courses={courses} course={course} setCourses={setCourses} />
     </div>
 }
 
