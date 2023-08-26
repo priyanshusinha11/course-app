@@ -27,7 +27,7 @@ Welcome to the Course App! This is a full-stack web application built using the 
 
 - **Frontend:**
   - React: A JavaScript library for building user interfaces.
-  - Redux: State management for React applications.
+  - Recoil: State management for React applications.
   - React Router: Handling navigation within the app.
   - Axios: Making HTTP requests to the backend.
 - **Backend:**
